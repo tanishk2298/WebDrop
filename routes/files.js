@@ -43,4 +43,42 @@ router.post('/', (req, res) => {
 
 })
 
+router.post('/send', async (req, res) => {
+
+    const {uuid, emailFrom, emailTo} = req.body
+
+    //Check for empty fields
+    if(!uuid || !emailFrom || !emailTo){
+        return res.status(422).status({error : 'All fields are required'})
+    }
+
+    const file = await File.findOne({uuid : uuid})
+
+    //Check if sender already exists
+    if(file.sender){
+        return res.status(422).status({error : 'Email already sent'})
+    }
+
+    file.sender = emailFrom
+    file.receiver = emailTo
+    const response = await file.save()
+
+    //Send email
+    const sendMail = require('../services/emailServices');
+    sendMail({
+        from : emailFrom,
+        to : emailTo,
+        subject : 'WebDrop File Sharing',
+        text : `${emailFrom} shared a file with you`,
+        html : require('../services/emailTemplate')
+        ({
+            emailFrom : emailFrom,
+            downloadLink : `${process.env.APP_BASE_URL}/files/${file.uuid}`,
+            size : (parseInt(file.size/1000) > 1000) ? parseInt(file.size/1000000) + ' MB' : parseInt(file.size/1000) + ' KB',
+            expires : '24 hrs'
+        })
+    })
+    
+})
+
 module.exports = router
