@@ -74,11 +74,11 @@ router.post('/send', async (req, res) => {
         ({
             emailFrom : emailFrom,
             downloadLink : `${process.env.APP_BASE_URL}/files/${file.uuid}`,
-            size : (parseInt(file.size/1000) > 1000) ? parseInt(file.size/1000000) + ' MB' : parseInt(file.size/1000) + ' KB',
+            size : parseInt(file.size/1000) + ' KB',
             expires : '24 hrs'
         })
     })
-    
+    return res.send({success : true})
 })
 
 module.exports = router
