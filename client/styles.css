@@ -44,6 +44,7 @@ body, .drop-zone{
 
 .browseBtn{
     color : #1E81CE;
+    cursor: pointer;
 }
 
 .icon-container{
@@ -73,5 +74,9 @@ body, .drop-zone{
 
 .dragged .icon-container .center{
     transform : translateY(-5px);
+}
+
+#fileInp{
+    display : none;
 }
 
