@@ -14,7 +14,7 @@ body, html{
     margin: 0;
 }
 
-body, .drop-zone{
+body, .drop-zone, .upload-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,5 +78,47 @@ body, .drop-zone{
 
 #fileInp{
     display : none;
+}
+
+.progress-container{
+    width : 500px;
+    height : 70px;
+    border : 2px solid var(--border-color);
+    margin-bottom : 25px;
+    border-radius : 10px;
+    position: relative;
+    display: none;
+}
+
+.bg-progress{
+    background : var(--main-bg-color);
+    width : 0%;
+    height : 100%;
+    transform-origin: left;
+    border-radius : 10px;
+    transition: width 0.28s linear;
+    position: absolute;
+}
+
+.inner-container{
+    position: absolute;
+    margin : 15px 15px;
+    z-index: 1;
+    color : #eee;
+    font-size: 14px;
+    opacity: .8;
+    width: calc(100% - 30px);
+}
+
+.percent-container{
+    margin : 4px;
+}
+
+.progress-bar{
+    height: 3px;
+    width : 100%;
+    background : var(--border-color);
+    border-radius: 3px;
+    transform-origin: left;
 }
 
