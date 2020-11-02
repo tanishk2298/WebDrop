@@ -122,3 +122,97 @@ body, .drop-zone, .upload-container{
     transform-origin: left;
 }
 
+.sharing-container{
+    width: 500px;
+    margin-bottom : 20px;
+    color : #eee;
+    opacity : 0.8;
+    font-size : 16px;
+    /*display: none;*/
+}
+
+.sharing-container .input-container{
+    position: relative;
+}
+
+.sharing-container .input-container input{
+    width : 100%;
+    border : 2px dashed var(--border-color);
+    border-radius : 5px;
+    background : #1E1E30;
+    color : #eee;
+    padding : 10px 15px;
+    box-sizing: border-box;
+    font-size : 14px;
+    opacity : 0.9;
+}
+
+.input-container img{
+    position : absolute;
+    height : 22px;
+    width : 22px;
+    right : 7px;
+    top : 9px;
+    cursor: pointer;
+}
+
+p{
+    opacity: 0.7;
+    text-align: center;
+    font-size: 14px;
+}
+
+.email-container{
+    display : flex;
+    align-items: center;
+}
+
+.email-container form{
+    width : 100%;
+    border: 2px dashed var(--border-color);
+    border-radius: 10px;
+    padding : 15px;
+    display : flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.email-container .field{
+    display : flex;
+    justify-content: space-between;
+    width : 400px;
+}
+
+.email-container .sender{
+    display : flex;
+    justify-content: space-between;
+    margin-bottom : 10px;
+}
+
+.field label{
+    font-size : 14px;
+    opacity: .9;
+}
+
+.field input{
+    background : #1E1E30;
+    color: #eee;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    text-align: center;
+}
+
+.field input:focus{
+    outline: none;
+}
+
+.email-container button{
+    font-size: 16px;
+    padding : 8px 32px;
+    margin-top : 18px;
+    background : #1E81CE;
+    color : #eee;
+    border-radius : 5px;
+    border : none;
+    cursor: pointer;
+}

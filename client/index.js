@@ -5,6 +5,9 @@ const bgprogress = document.querySelector(".bg-progress");
 const percentDiv = document.querySelector("#percent");
 const progressContainer = document.querySelector(".progress-container");
 const uploading = document.querySelector(".uploading");
+const downloadLink = document.querySelector("#fileURL");
+const sharingContainer = document.querySelector(".sharing-container");
+const copyBtn = document.querySelector("#copyBtn");
 
 const host = "https://webdrop-fileshare.herokuapp.com/";
 const uploadURL = `${host}api/files`;
@@ -53,7 +56,13 @@ const uploadFile = () => {
         if(xhr.readyState === XMLHttpRequest.DONE){
             const link = JSON.parse(xhr.response);
             console.log(link.file);
+            downloadLink.value = link.file;
             progressContainer.style.display = "none";
+            sharingContainer.style.display = "block";
+            copyBtn.addEventListener("click", () => {
+                downloadLink.select();
+                document.execCommand("copy");    
+            })
         }
     }
 

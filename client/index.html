@@ -33,6 +33,28 @@
                 </div>
             </div>
         </div>
+        <div class="sharing-container">
+            <p class="expire">Link expires in 24 hrs</p>
+            <div class="input-container">
+                <input type="text" id="fileURL" value=""readonly/>
+                <img src="./img/copy.svg" alt="copy" id="copyBtn" draggable="false">
+            </div>
+            <p>or Send via Email</p>
+            <div class="email-container">
+                <form>
+                    <div class="field sender">
+                        <label for="sender">Your Email : </label>
+                        <input type="email" name="from" id="sender" required/>
+                        
+                    </div>
+                    <div class="field">
+                        <label for="reciever">Reciever's Email : </label>
+                        <input type="email" name="to" id="reciever" required/>
+                    </div>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
     </section>
     <script src="index.js" type="text/javascript"></script>
 </body>
