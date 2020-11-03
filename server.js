@@ -20,6 +20,8 @@ app.set('view engine', 'ejs')
 app.use('/api/files', require('./routes/files'))
 app.use('/files', require('./routes/show'))
 app.use('/files/download', require('./routes/download'))
+var favicon = require('serve-favicon');
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 const PORT = process.env.PORT || 3000
 

@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --main-bg-color:  #161625;
+    --light-blue: #eee;
+    --dark-blue: #1E81CE;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--main-bg-color);
+    height: 98vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+  }
+
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    width: 180px;
+  }
+section.download {
+    background:#1E1E30;
+    width: 430px;
+    max-width: 90%;
+    border-radius: 25px;
+    box-shadow : 0px 30px 30px 0px rgba(0,0,0,0.14); 
+    padding: 2rem;
+    color : #eee;
+    text-align: center;
+}
+.download__icon {
+    height: 6rem;
+    margin-bottom : 2px;
+}
+.download__meta h4, h2 {
+    margin-bottom: 0;
+    line-height: 1.3;
+    font-size: 15px;
+    color : #eee;
+    margin-bottom: 5px;
+}
+
+p{
+    font-size: 14px;
+    opacity: 0.8;
+    color : #eee;
+}
+
+.send-btn-container a {
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 40px;
+    margin-top: 15px;
+    background: var(--dark-blue);
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: #eee;
+    cursor: pointer;
+  }
+
+  .download-img{
+    background : url(../img/download.svg) no-repeat center; 
+    height : 50vh;
+    width : 50vw;
+    background-size: contain;
+    position: relative;
+    left: -5%;
+}
+
+@media screen and (max-width : 1000px){
+    .download-img{
+        display: none;
+    }
+}
