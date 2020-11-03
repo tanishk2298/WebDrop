@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-/*font-family: 'Montserrat', sans-serif;*/
 
 :root{
     --main-bg-color : #161625;
     --border-color : #0288d147;
+    --container-width : 500px;
 }
 
 body, html{
@@ -12,6 +12,7 @@ body, html{
     height: 100%;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 body, .drop-zone, .upload-container{
@@ -21,14 +22,26 @@ body, .drop-zone, .upload-container{
     flex-direction: column;
 }
 
+body{
+    flex-direction: row;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    width: 180px;
+  }
+
 .upload-container{
     background : #1E1E30;
     border-radius : 25px;
-    box-shadow : 0 20px 20px #0000002e;
+    box-shadow : 0px 30px 30px 0px rgba(0,0,0,0.14); 
 }
 
+
 .drop-zone{
-    width : 500px;
+    width : var(--container-width);
     height : 200px;
     border : 2px dashed var(--border-color);
     border-radius : 10px;
@@ -81,7 +94,7 @@ body, .drop-zone, .upload-container{
 }
 
 .progress-container{
-    width : 500px;
+    width : var(--container-width);
     height : 70px;
     border : 2px solid var(--border-color);
     margin-bottom : 25px;
@@ -123,12 +136,12 @@ body, .drop-zone, .upload-container{
 }
 
 .sharing-container{
-    width: 500px;
+    width: var(--container-width);
     margin-bottom : 20px;
     color : #eee;
     opacity : 0.8;
     font-size : 16px;
-    /*display: none;*/
+    display: none;
 }
 
 .sharing-container .input-container{
@@ -215,4 +228,46 @@ p{
     border-radius : 5px;
     border : none;
     cursor: pointer;
+}
+
+.email-container button:focus{
+    outline : none;
+}
+
+.toast{
+    position : absolute;
+    bottom : 10px;
+    left : 50%;
+    transform : translate(-50%, 60px);
+    padding: 10px 20px;
+    border-radius : 5px;
+    color : #eee;
+    background :#1E81CE;
+    font-size : 12px;
+    transition : transform ease-in-out 0.2s;
+    box-shadow: 0px 24px 38px 3px rgba(0,0,0,0.14) , 0px 9px 46px 8px rgba(0,0,0,0.12) , 0px 11px 15px -7px rgba(0,0,0,0.2);    
+}
+
+.upload-img{
+    background : url(./img/upload.svg) no-repeat center; 
+    height : 50vh;
+    width : 50vw;
+    background-size: contain;
+}
+
+@media screen and (max-width : 900px){
+    :root{
+        --container-width : 320px;
+    }
+    .upload-img{
+        display: none;
+    }
+    .email-container .field{
+        flex-direction: column;
+        width : 300px;
+    }
+    .field label{
+        margin-bottom : 15px;
+        text-align: center; 
+    }
 }
